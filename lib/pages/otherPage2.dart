@@ -12,7 +12,6 @@ class OtherPage2 extends StatelessWidget {
       body: Column(
         children: [
            Text("Other Page2"),
-
         ],
       ),
     );
