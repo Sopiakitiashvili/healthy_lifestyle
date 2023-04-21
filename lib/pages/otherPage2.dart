@@ -47,7 +47,7 @@ class _OtherPage2State extends State<OtherPage2> {
                 Container(
                   width: 120,
                   height: 45,
-                  margin: EdgeInsets.only(top: 15, left: 15,),
+                  margin: const EdgeInsets.only(top: 15, left: 15,),
                   child: ElevatedButton(onPressed: () {
                     setState(() {
                       index = 0;
@@ -60,12 +60,12 @@ class _OtherPage2State extends State<OtherPage2> {
                     } , );
                   }, child: Container(
                       alignment: Alignment.topLeft,
-                      child: const Text("თავიდან დაწყება", style: const TextStyle(
+                      child: const Text("თავიდან დაწყება", style: TextStyle(
                         fontSize: 16,
                         color: Colors.black87,))),),
                 ),
                 Container(
-                  margin: EdgeInsets.only(left: 155),
+                  margin: const EdgeInsets.only(left: 155),
                     alignment: Alignment.topRight,
                     child: Text("ქულა: $score",style: const TextStyle(
                       fontSize: 25,
@@ -76,7 +76,7 @@ class _OtherPage2State extends State<OtherPage2> {
             Container(
                 width: 400,
                 height: 100,
-                margin: EdgeInsets.all(20),
+                margin: const EdgeInsets.all(20),
                 alignment: Alignment.center,
                 child: Text(questions[index], style: const TextStyle(
                   fontSize: 23,

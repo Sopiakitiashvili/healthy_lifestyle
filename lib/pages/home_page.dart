@@ -15,25 +15,25 @@ class HomePage extends StatelessWidget {
         children: [
           Center(
             child: Container(
-              margin: EdgeInsets.all(20),
+              margin: const EdgeInsets.all(20),
               height: 150,
               width: 400,
               child: Column(
                 children: [
-                  Text("პროექტის შესახებ", style: TextStyle(
+                  const Text("პროექტის შესახებ", style: TextStyle(
                     fontSize: 30,
                     color: Colors.black,
                   ),),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 20),
+                    padding: const EdgeInsets.only(top: 20),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => OtherPage1()));
+                        Navigator.of(context).push( MaterialPageRoute(builder: (context) => const OtherPage1()));
                       },
-                      child: Text("შესვლა", style: TextStyle(
+                      child: const Text("შესვლა", style: TextStyle(
                         fontSize: 18,
                         color: Colors.blue,
                       ),),),
@@ -64,20 +64,20 @@ class HomePage extends StatelessWidget {
               width: 400,
               child: Column(
                 children: [
-                  Text("ქვიზი", style: TextStyle(
+                  const Text("ქვიზი", style: TextStyle(
                     fontSize: 30,
                     color: Colors.black,
                   ),),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 20),
+                    padding: const EdgeInsets.only(top: 20),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => OtherPage2()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const OtherPage2()));
                       },
-                      child: Text("დაწყება", style: TextStyle(
+                      child: const Text("დაწყება", style: TextStyle(
                         fontSize: 18,
                         color: Colors.blue,
                       ),),),
