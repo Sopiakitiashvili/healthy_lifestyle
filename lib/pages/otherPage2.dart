@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthy_lifestyle/pages/otherPage3.dart';
 
 class OtherPage2 extends StatefulWidget {
   const OtherPage2({Key? key}) : super(key: key);
@@ -57,6 +58,7 @@ class _OtherPage2State extends State<OtherPage2> {
                       buttonDColor = Colors.blue;
                       score = 0;
                       alreadyAnswered = false;
+                      nextQuestionVisible = true;
                     } , );
                   }, child: Container(
                       alignment: Alignment.topLeft,
@@ -89,6 +91,7 @@ class _OtherPage2State extends State<OtherPage2> {
               children: [
                 GestureDetector(
                   onTap: () {
+
                       if (correctAnswers[index] == answersA[index]) {
                         setState(() {
                           score++;
@@ -115,6 +118,7 @@ class _OtherPage2State extends State<OtherPage2> {
                 ),
                 GestureDetector(
                   onTap: () {
+
                     if (correctAnswers[index] == answersB[index]) {
                       setState(() {
                         score++;
@@ -126,6 +130,7 @@ class _OtherPage2State extends State<OtherPage2> {
                       });
                     }
                   },
+
                   child: Container(
                     color: buttonBColor,
                     width: 150,
@@ -163,7 +168,7 @@ class _OtherPage2State extends State<OtherPage2> {
                     setState(() {
                       alreadyAnswered = true;
                     });
-                  },
+                    },
                   child: Container(
                     color: buttonCColor,
                     width: 150,
@@ -179,6 +184,7 @@ class _OtherPage2State extends State<OtherPage2> {
                 ),
                 GestureDetector(
                   onTap: () {
+
                     if (correctAnswers[index] == answersD[index]) {
                       setState(() {
                         score++;
@@ -214,21 +220,28 @@ class _OtherPage2State extends State<OtherPage2> {
                 if(questions.length > index + 1) {
                   setState(() {
                     index++;
-                    buttonAColor = Colors.blue;
-                    buttonBColor = Colors.blue;
-                    buttonCColor = Colors.blue;
-                    buttonDColor = Colors.blue;
-                  });
-                } else {
-                  setState(() {
-                    nextQuestionVisible = false;
-                    alreadyAnswered = false;
                   });
                 }
-              }, child: const Text('შემდეგი შეკითხვა')),
+                if (index == questions.length - 1) {
+                  {
+                    setState(() {
+                      nextQuestionVisible = false;
+                    });
+                  }
+                }
+                buttonAColor = Colors.blue;
+                buttonBColor = Colors.blue;
+                buttonCColor = Colors.blue;
+                buttonDColor = Colors.blue;
+              },
+                  child: const Text('შემდეგი შეკითხვა')),
             ),
+            ElevatedButton(onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => otherPage3(score: score)));
+            }, child: const Text("შედეგის ნახვა"))
           ],
         ),
     );
   }
 }
+
