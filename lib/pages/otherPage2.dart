@@ -91,20 +91,27 @@ class _OtherPage2State extends State<OtherPage2> {
               children: [
                 GestureDetector(
                   onTap: () {
-
-                      if (correctAnswers[index] == answersA[index]) {
-                        setState(() {
-                          score++;
-                          buttonAColor = Colors.green;
-                        });
-                      } else {
-                        setState(() {
-                          buttonAColor = Colors.red;
-                        });
+                      if (!alreadyAnswered) {
+                        if (correctAnswers[index] == answersA[index]) {
+                          setState(() {
+                            score++;
+                            buttonAColor = Colors.green;
+                          });
+                        } else {
+                          setState(() {
+                            buttonAColor = Colors.red;
+                          });
+                        }
                       }
+                      setState(() {
+                        alreadyAnswered = true;
+                      });
                   },
                   child: Container(
-                    color: buttonAColor,
+                    decoration: BoxDecoration(
+                      color: buttonAColor,
+                      borderRadius: BorderRadius.circular(16)
+                    ),
                     width: 150,
                     height: 80,
                     alignment: Alignment.center,
@@ -118,7 +125,7 @@ class _OtherPage2State extends State<OtherPage2> {
                 ),
                 GestureDetector(
                   onTap: () {
-
+                    if (!alreadyAnswered) {
                     if (correctAnswers[index] == answersB[index]) {
                       setState(() {
                         score++;
@@ -129,10 +136,17 @@ class _OtherPage2State extends State<OtherPage2> {
                         buttonBColor = Colors.red;
                       });
                     }
-                  },
+                  }
+                   setState(() {
+                      alreadyAnswered = true;
+                    });
+                   },
 
                   child: Container(
-                    color: buttonBColor,
+                    decoration: BoxDecoration(
+                        color: buttonBColor,
+                        borderRadius: BorderRadius.circular(16)
+                    ),
                     width: 150,
                     height: 80,
                     alignment: Alignment.center,
@@ -154,7 +168,7 @@ class _OtherPage2State extends State<OtherPage2> {
               children: [
                 GestureDetector(
                   onTap: () {
-
+                      if (!alreadyAnswered) {
                     if (correctAnswers[index] == answersC[index]) {
                       setState(() {
                         score++;
@@ -168,9 +182,16 @@ class _OtherPage2State extends State<OtherPage2> {
                     setState(() {
                       alreadyAnswered = true;
                     });
-                    },
+                    }
+                    setState(() {
+                     alreadyAnswered = true;
+                     });
+                     },
                   child: Container(
-                    color: buttonCColor,
+                    decoration: BoxDecoration(
+                        color: buttonCColor,
+                        borderRadius: BorderRadius.circular(16)
+                    ),
                     width: 150,
                     height: 80,
                     alignment: Alignment.center,
@@ -184,7 +205,7 @@ class _OtherPage2State extends State<OtherPage2> {
                 ),
                 GestureDetector(
                   onTap: () {
-
+                      if (!alreadyAnswered) {
                     if (correctAnswers[index] == answersD[index]) {
                       setState(() {
                         score++;
@@ -195,10 +216,17 @@ class _OtherPage2State extends State<OtherPage2> {
                         buttonDColor = Colors.red;
                       });
                     }
+                  }
+                      setState(() {
+                        alreadyAnswered = true;
+                      });
                   },
 
                   child: Container(
-                    color: buttonDColor,
+                    decoration: BoxDecoration(
+                        color: buttonDColor,
+                        borderRadius: BorderRadius.circular(16)
+                    ),
                     width: 150,
                     height: 80,
                     alignment: Alignment.center,
@@ -233,6 +261,7 @@ class _OtherPage2State extends State<OtherPage2> {
                 buttonBColor = Colors.blue;
                 buttonCColor = Colors.blue;
                 buttonDColor = Colors.blue;
+                alreadyAnswered = false;
               },
                   child: const Text('შემდეგი შეკითხვა')),
             ),
